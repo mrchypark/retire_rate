@@ -4,13 +4,9 @@ library(ggiraph)
 
 options(scipen=999)
 
-dat<-read.csv("./data.txt",sep="\t")
-names(dat) <-c("retire","year1","year2","year3","year5","year7","year10","year15","year20")
+dat<-read.csv("./dat.txt",sep="\t")
 write.table(dat,"./dat.txt",sep="\t",row.names = F)
 dat1<-dat[seq(1,52,2),]
-names(dat1) <-c("retire","year1","year2","year3","year5","year7","year10","year15","year20")
-
-dat2<-dat[seq(2,52,2),]
 
 tdat<-melt(data = dat1, id.vars = "retire")
 names(tdat)[2]<-"year"
