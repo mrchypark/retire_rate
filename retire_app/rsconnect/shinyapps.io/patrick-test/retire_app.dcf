@@ -3,8 +3,8 @@ title: retire_app
 account: patrick-test
 server: shinyapps.io
 appId: 166269
-bundleId: 759503
+bundleId: 759695
 url: https://patrick-test.shinyapps.io/retire_app/
-when: 1490271630.15504
+when: 1490282432.94274
 asMultiple: FALSE
 asStatic: FALSE
