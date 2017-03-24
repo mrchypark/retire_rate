@@ -15,17 +15,15 @@ fluidPage(
   ),
   
   
-  titlePanel("퇴직 소득세 계산"),
+  titlePanel(h2("퇴직 소득세 계산")),
   
   sidebarLayout(
       sidebarPanel(
-        sliderInput("amount", 
-                    label= "퇴직금 조절", 
-                  value = 1,
-                  step = 1,
-                  min = 1, 
-                  max = 26,
-                  post = "단계")
+        selectInput("amount", 
+                    label= "퇴직금 :", 
+                    unique(tdat$verb), 
+                    selected = "1000만원",
+                    selectize=FALSE)
         ),
       mainPanel(ggiraphOutput("plot"))
     )
