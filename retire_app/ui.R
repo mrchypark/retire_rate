@@ -1,29 +1,20 @@
 library(shiny)
 library(ggiraph)
 
-fluidPage(
+fluidPage( tags$head(tags$meta(name="viewport", content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")),
 
-  tags$head(
-    tags$style(HTML("
-      	
-        @import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
-      
-      * { font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; }
-      }
-
-    "))
-  ),
-  
-  
-  titlePanel(h2("퇴직 소득세 계산")),
+  titlePanel(h2("퇴직 소득세 계산")
+             ),
   
   sidebarLayout(
+      
       sidebarPanel(
-        selectInput("amount", 
+            selectInput("amount", 
                     label= "퇴직금 :", 
                     unique(tdat$verb), 
                     selected = "1000만원",
-                    selectize=FALSE)
+                    selectize=FALSE),
+            p("* 막대그래프를 터치하여 확인하세요.")
         ),
       mainPanel(ggiraphOutput("plot"))
     )
